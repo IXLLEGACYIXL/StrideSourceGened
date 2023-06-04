@@ -27,5 +27,9 @@ TestClass class2 = new TestClass()
         }
 
     };
+var serializer = new SerializerBuilder().Build();
 
+string yaml = serializer.Serialize(GeneratedSerializerTestClass.WriteToDictionary(class2));
+
+File.WriteAllText("C:\\Godot\\testClass.yaml", yaml);
 

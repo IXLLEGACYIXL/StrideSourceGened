@@ -1,5 +1,4 @@
-﻿using BfnDamage.Dices;
-using BfnDamage.Header;
+﻿using BfnDamage.Header;
 using Stride.Engine;
 using System;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ using YamlDotNet.Serialization;
 namespace StrideSourceGened
 {
     [DataContract]
-    public class TestClass : EntityComponent
+    public class TestClass : TInherit2
     {
         [DataMember]
         public int Number { get; set; } = 10;
