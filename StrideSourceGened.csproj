@@ -14,4 +14,10 @@
 	  <PackageReference Include="YamlDotNet" Version="13.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="NexDamageApi">
+      <HintPath>..\NexDamageApi\obj\Debug\net6.0\ref\NexDamageApi.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

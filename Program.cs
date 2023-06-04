@@ -27,15 +27,5 @@ TestClass class2 = new TestClass()
         }
 
     };
-var x = GeneratedSerializerTestClass.WriteToDictionary(class1);
-var y = GeneratedSerializerTestClass.WriteToDictionary(class2);
-Console.WriteLine(x);
-// Serialize the dictionary to a YAML string
-var serializer = new SerializerBuilder().
-    Build();
-string yaml = serializer.Serialize(y);
 
-using (var writer = new StreamWriter("C:\\Godot\\tes.yaml"))
-{
-    serializer.Serialize(writer, y);
-}
+
