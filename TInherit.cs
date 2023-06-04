@@ -2,7 +2,8 @@
 
 namespace StrideSourceGened
 {
-    public class TInherit
+    [DataContract]
+    public class TInherit : TInherit2
     {
         [DataMember]
         public int FancyNumber { get; set; } = 10;

@@ -12,7 +12,7 @@ using YamlDotNet.Serialization;
 namespace StrideSourceGened
 {
     [DataContract]
-    public class TestClass : SyncScript
+    public class TestClass : TInherit
     {
         [DataMember]
         public int Number { get; set; } = 10;
@@ -22,11 +22,6 @@ namespace StrideSourceGened
         public TestClass FancyClass { get; set; }
         
         public TestClass FancyClass2 { get; set; }
-
-        public override void Update()
-        {
-            throw new NotImplementedException();
-        }
 
         public void WriteToFile(TestClass objectToSerialize, string filePath)
         {
