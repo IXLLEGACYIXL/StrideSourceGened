@@ -18,7 +18,13 @@ var x = new TestClass()
         Test = "Hello recursive"
     },
 };
-YamlStream st = new YamlStream(new YamlDocument(GeneratedSerializerTestClass.ConvertToYaml(x)));
+var ser = new GeneratedSerializerTestClass();
+
+YamlStream st = new YamlStream(new YamlDocument(ser.ConvertToYaml(x)));
+
+
+var xs = new YamlMappingNode();
+
 using (TextWriter writer = File.CreateText("C:\\Godot\\some-file.yaml"))
 {
     st.Save(writer, false);
