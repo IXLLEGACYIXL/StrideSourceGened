@@ -6,30 +6,20 @@ using Stride.Core.Extensions;
 using Stride.Core.Shaders.Ast.Hlsl;
 using StrideSourceGened;
 using System.Collections.Generic;
+using System.Net;
 using System.Reflection;
 using YamlDotNet.RepresentationModel;
 using YamlDotNet.Serialization;
 
-Console.WriteLine("Hello, World!");
-TestClass class1 = new TestClass();
-TestClass class2 = new TestClass()
-    {
-    Number = 1,
+var x = new TestClass()
+{
     FancyClass = new TestClass()
-      
-        {
-        Number = 2,
-            FancyClass = new TestClass()
-            {
-                Number = 3,
-                Test = "Hello recursive"
-            }
-        }
-
-    };
-var serializer = new SerializerBuilder().Build();
-
-string yaml = serializer.Serialize(GeneratedSerializerTestClass.WriteToDictionary(class2));
-
-File.WriteAllText("C:\\Godot\\testClass.yaml", yaml);
-
+    {
+        Test = "Hello recursive"
+    },
+};
+YamlStream st = new YamlStream(new YamlDocument(GeneratedSerializerTestClass.ConvertToYaml(x)));
+using (TextWriter writer = File.CreateText("C:\\Godot\\some-file.yaml"))
+{
+    st.Save(writer, false);
+}
