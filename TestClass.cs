@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 
 namespace StrideSourceGened
 {
+    [DataContract]
     public class TestClass : TInherit2
     {
         [DataMember]

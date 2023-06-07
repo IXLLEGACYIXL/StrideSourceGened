@@ -12,7 +12,7 @@ namespace StrideSourceGened
     [MemoryDiagnoser]
     public class Benchmark
     {
-        [Params(100000)]
+        [Params(1,100,1000,10000,100000)]
         public int count;
 
         TestClass x = new TestClass()
