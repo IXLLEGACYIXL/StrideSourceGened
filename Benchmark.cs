@@ -12,7 +12,7 @@ namespace StrideSourceGened
     [MemoryDiagnoser]
     public class Benchmark
     {
-        [Params(1,100,1000,10000,100000)]
+        [Params(1,100,1000,10000)]
         public int count;
 
         TestClass x = new TestClass()
@@ -38,16 +38,22 @@ namespace StrideSourceGened
 
             using var writer = File.CreateText("C:\\Godot\\some-file.yaml");
 
-            List<YamlDocument> documents = new List<YamlDocument>(count);
-            YamlStream st = new YamlStream();
             Emitter emitter = new Emitter(writer);
-            for (int i = 0; i < count; i++)
+            YamlStream stream = new YamlStream(count);
+            foreach(var x2 in GetYamlDocuments())
             {
-                documents.Add(new YamlDocument(ser.ConvertToYaml(x)));
+                stream.Add(x2);
             }
-            st.Save(writer);
+           stream.Save(writer,false);
             writer.Close();
            writer.Dispose();
+        }
+        public IEnumerable<YamlDocument> GetYamlDocuments()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return new YamlDocument(ser.ConvertToYaml(x));
+            }
         }
     }
 }
