@@ -1,12 +1,13 @@
-﻿using System.Runtime.Serialization;
+﻿
+using System.Runtime.Serialization;
 
-namespace StrideSourceGened
+namespace StrideSourceGened;
+
+[DataContract]
+public class TInherit : TInherit2
 {
-    [DataContract]
-    public class TInherit : TInherit2
-    {
-        [DataMember]
-        public int FancyNumber { get; set; } = 10;
-    }
+    [DataMember]
+    public int FancyNumber { get; set; } = 10;
 }
+
 

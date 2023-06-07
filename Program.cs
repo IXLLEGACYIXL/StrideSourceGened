@@ -1,31 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Stride.Core.Extensions;
-using Stride.Core.Shaders.Ast.Hlsl;
 using StrideSourceGened;
-using System.Collections.Generic;
-using System.Net;
-using System.Reflection;
+using YamlDotNet.Core.Events;
+using YamlDotNet.Core;
 using YamlDotNet.RepresentationModel;
-using YamlDotNet.Serialization;
+using System.Diagnostics;
+using BenchmarkDotNet.Running;
 
-var x = new TestClass()
-{
-    FancyClass = new TestClass()
-    {
-        Test = "Hello recursive"
-    },
-};
-var ser = new GeneratedSerializerTestClass();
-
-YamlStream st = new YamlStream(new YamlDocument(ser.ConvertToYaml(x)));
-
-
-var xs = new YamlMappingNode();
-
-using (TextWriter writer = File.CreateText("C:\\Godot\\some-file.yaml"))
-{
-    st.Save(writer, false);
-}
+BenchmarkRunner.Run<Benchmark>();
