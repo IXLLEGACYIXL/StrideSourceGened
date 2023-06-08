@@ -30,3 +30,27 @@ namespace StrideSourceGened
 
 }
 
+namespace Bob
+{
+
+    /// <summary>
+    /// It must succeed if (a second namespace is given with the same name of the classes.
+    /// To ensure that there is no conflict as roslyn assumes a unique file name
+    /// </summary>
+    [DataContract]
+    public class TInherit3
+    {
+        [DataMember]
+        public int FancyNumber { get; set; } = 10;
+    }
+
+    [DataContract]
+    public partial class TInherit4
+    {
+        public int Nubmers { get; set; }
+        public Int2 Int2 { get; set; } = new Int2() { X = 1, Y = 2 };
+        public int Nubmers2 { get; set; }
+    }
+
+
+}

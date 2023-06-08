@@ -5,10 +5,12 @@ using System.Runtime.Serialization;
 namespace StrideSourceGened;
 
     [DataContract]
-    public class TInherit : TInherit2
+    public class TInherit
     {
         [DataMember]
         public int FancyNumber { get; set; } = 10;
+        [DataMember]
+        public string FancyString { get; set; }
     }
 
     [DataContract]
