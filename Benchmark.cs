@@ -23,23 +23,16 @@ namespace StrideSourceGened
             },
         };
         GeneratedSerializerTestClass ser = new GeneratedSerializerTestClass();
-        [IterationSetup]
-        public void Setup()
-        {
-        }
-        [IterationCleanup]
-        public void SEtup()
-        {
 
-        }
-        [Benchmark]
+      [Benchmark]
         public void Test()
         {
 
-            using var writer = File.CreateText("C:\\Godot\\some-file.yaml");
+            using var writer = File.CreateText($"C:\\Godot\\some-file.yaml{count}");
 
             Emitter emitter = new Emitter(writer);
             YamlStream stream = new YamlStream(count);
+            
             foreach(var x2 in GetYamlDocuments())
             {
                 stream.Add(x2);
@@ -55,7 +48,18 @@ namespace StrideSourceGened
                 yield return new YamlDocument(ser.ConvertToYaml(x));
             }
         }
+        List<TestClass> testCases;
+        [Benchmark]
+        public void ReadBench()
+        {
+            testCases = new List<TestClass>(count);
+            using var reader = new StreamReader($"C:\\Godot\\some-file.yaml{count}") ;
+            
+            GeneratedSerializerTestClass generatedSerializerTestClass = new GeneratedSerializerTestClass();
+            testCases.AddRange(generatedSerializerTestClass.Deserialize(reader));
+        }
     }
+
 }
 
 
