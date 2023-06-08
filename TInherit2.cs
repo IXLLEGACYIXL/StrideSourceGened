@@ -2,10 +2,16 @@
 using Stride.Core.Mathematics;
 
 
+
 namespace StrideSourceGened
 {
 
-
+    /// <summary>
+    /// This scenario tests if (a multi class normal namespace works
+    /// If it fails to create of these two classes the generation, then normally 
+    /// one of the classes is attached to the generator and causes duplication generation of a class.
+    /// clearing the namespace helps, but better to create a new namespace syntax
+    /// </summary>
     [DataContract]
     public class TInherit3 : TInherit2
     {
