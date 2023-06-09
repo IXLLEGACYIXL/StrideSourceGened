@@ -7,5 +7,21 @@ using YamlDotNet.RepresentationModel;
 using System.Diagnostics;
 using BenchmarkDotNet.Running;
 using System.Runtime.ConstrainedExecution;
+using YamlDotNet;
 
 BenchmarkRunner.Run<Benchmark>();
+
+class Test : YamlSerializer<Test>
+{
+    public string IdentifierTag { get; }
+
+    public YamlMappingNode ConvertToYaml(Test obj)
+    {
+        throw new NotImplementedException();
+    }
+
+    public YamlMappingNode ConvertToYaml(object obj)
+    {
+        throw new NotImplementedException();
+    }
+}
