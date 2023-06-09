@@ -11,7 +11,7 @@ using YamlDotNet;
 
 BenchmarkRunner.Run<Benchmark>();
 
-class Test : YamlSerializer<Test>
+class Test 
 {
     public string IdentifierTag { get; }
 

@@ -58,8 +58,7 @@ namespace StrideSourceGened
             var g = new GeneratedSerializerTestClass();
             YamlStream stream = new();
             stream.Load( reader, count );
-            g.serializerTemp = new GeneratedSerializerTestClass();
-            g.serializerTemp.serializerTemp = new GeneratedSerializerTestClass();
+
             foreach(var x in stream.Documents)
             {
             testCases.Add(g.Deserialize((YamlMappingNode)x.RootNode));
