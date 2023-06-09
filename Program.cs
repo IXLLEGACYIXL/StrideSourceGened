@@ -9,4 +9,3 @@ using BenchmarkDotNet.Running;
 using System.Runtime.ConstrainedExecution;
 
 BenchmarkRunner.Run<Benchmark>();
-

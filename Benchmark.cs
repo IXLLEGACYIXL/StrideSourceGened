@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YamlDotNet.Core;
+using YamlDotNet.Core.Events;
 using YamlDotNet.RepresentationModel;
+using YamlDotNet.Serialization;
 
 namespace StrideSourceGened
 {
@@ -22,9 +24,9 @@ namespace StrideSourceGened
                 Test = "Hello recursive"
             },
         };
-        GeneratedSerializerTestClass ser = new GeneratedSerializerTestClass();
+    //    GeneratedSerializerTestClass ser = new GeneratedSerializerTestClass();
 
-      [Benchmark]
+     /* [Benchmark]
         public void Test()
         {
 
@@ -47,17 +49,24 @@ namespace StrideSourceGened
             {
                 yield return new YamlDocument(ser.ConvertToYaml(x));
             }
-        }
-        List<TestClass> testCases;
+        }*/
         [Benchmark]
         public void ReadBench()
         {
-            testCases = new List<TestClass>(count);
-            using var reader = new StreamReader($"C:\\Godot\\some-file.yaml{count}") ;
-            
-            GeneratedSerializerTestClass generatedSerializerTestClass = new GeneratedSerializerTestClass();
-            testCases.AddRange(generatedSerializerTestClass.Deserialize(reader));
+            List<TestClass> testCases = new (count);
+            using var reader = new StreamReader($"C:\\Godot\\some-file.yaml{count}");
+            var g = new GeneratedSerializerTestClass();
+            YamlStream stream = new();
+            stream.Load( reader, count );
+            g.serializerTemp = new GeneratedSerializerTestClass();
+            g.serializerTemp.serializerTemp = new GeneratedSerializerTestClass();
+            foreach(var x in stream.Documents)
+            {
+            testCases.Add(g.Deserialize((YamlMappingNode)x.RootNode));
+
+            }
         }
+
     }
 
 }

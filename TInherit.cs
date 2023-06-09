@@ -1,5 +1,4 @@
 ﻿
-using Stride.Core.Mathematics;
 using System.Runtime.Serialization;
 
 namespace StrideSourceGened;
