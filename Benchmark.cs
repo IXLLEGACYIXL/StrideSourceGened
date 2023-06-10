@@ -24,9 +24,9 @@ namespace StrideSourceGened
                 Test = "Hello recursive"
             },
         };
-    //    GeneratedSerializerTestClass ser = new GeneratedSerializerTestClass();
+        GeneratedSerializerTestClass ser = new GeneratedSerializerTestClass();
 
-     /* [Benchmark]
+     [Benchmark]
         public void Test()
         {
 
@@ -49,7 +49,7 @@ namespace StrideSourceGened
             {
                 yield return new YamlDocument(ser.ConvertToYaml(x));
             }
-        }*/
+        }
         [Benchmark]
         public void ReadBench()
         {
@@ -59,11 +59,9 @@ namespace StrideSourceGened
             YamlStream stream = new();
             stream.Load( reader, count );
 
-            foreach(var x in stream.Documents)
-            {
-            testCases.Add(g.Deserialize((YamlMappingNode)x.RootNode));
+            testCases.AddRange(g.DeserializeMany(reader));
 
-            }
+            
         }
 
     }

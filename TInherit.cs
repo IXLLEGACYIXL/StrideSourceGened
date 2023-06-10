@@ -4,11 +4,11 @@ using System.Runtime.Serialization;
 namespace StrideSourceGened;
 
     [DataContract]
-    public class TInherit
+    public class TInherit 
     {
-        [DataMember]
-        public int FancyNumber { get; set; } = 10;
-        [DataMember]
+        [DataMember()]
+        public int FancyNumber { get; set; }
+        [IgnoreDataMember()]
         public string FancyString { get; set; }
     }
 

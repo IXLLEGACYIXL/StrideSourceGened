@@ -23,7 +23,11 @@ namespace StrideSourceGened
         public int Nubmers { get; set; }
         public int Nubmers2 { get; set; }
     }
-
+    [DataContract]
+    public struct TInherit5
+    {
+        public int Test { get; set; }
+    }
 
 }
 

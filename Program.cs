@@ -8,20 +8,30 @@ using System.Diagnostics;
 using BenchmarkDotNet.Running;
 using System.Runtime.ConstrainedExecution;
 using YamlDotNet;
+int count = 10000;
+using var writer = File.CreateText($"C:\\Godot\\some-file.yaml{count}");
 
-BenchmarkRunner.Run<Benchmark>();
-
-class Test 
+Emitter emitter = new Emitter(writer);
+YamlStream stream = new YamlStream(count);
+TestClass x = new TestClass()
 {
-    public string IdentifierTag { get; }
-
-    public YamlMappingNode ConvertToYaml(Test obj)
+    FancyClass = new TestClass()
     {
-        throw new NotImplementedException();
-    }
-
-    public YamlMappingNode ConvertToYaml(object obj)
+        Test = "Hello recursive"
+    },
+};
+foreach (var x2 in GetYamlDocuments())
+{
+    stream.Add(x2);
+}
+stream.Save(writer, false);
+writer.Close();
+writer.Dispose();
+IEnumerable<YamlDocument> GetYamlDocuments()
+{
+GeneratedSerializerTestClass ser = new GeneratedSerializerTestClass();
+    for (int i = 0; i < count; i++)
     {
-        throw new NotImplementedException();
+        yield return new YamlDocument(ser.ConvertToYaml(x));
     }
 }

@@ -8,12 +8,11 @@ namespace StrideSourceGened
     public class TestClass : TInherit2
     {
         [DataMember]
-        public int Number { get; set; } = 10;
-        [DataMember]
-        public string Test { get; set; } = "hello mister";
-        [DataMember]
+        public int TEst = 10;
+        
+        public int Number { internal get; set; } = 10;
+        public string Test { get; internal init; } = "hello mister";
         public TestClass FancyClass { get; set; }
-        [DataMember]
         public TestClass FancyClass2 { get; set; }
 
         public void WriteToFile(TestClass objectToSerialize, string filePath)
