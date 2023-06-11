@@ -24,45 +24,8 @@ namespace StrideSourceGened
                 Test = "Hello recursive"
             },
         };
-        GeneratedSerializerTestClass ser = new GeneratedSerializerTestClass();
 
-     [Benchmark]
-        public void Test()
-        {
-
-            using var writer = File.CreateText($"C:\\Godot\\some-file.yaml{count}");
-
-            Emitter emitter = new Emitter(writer);
-            YamlStream stream = new YamlStream(count);
-            
-            foreach(var x2 in GetYamlDocuments())
-            {
-                stream.Add(x2);
-            }
-           stream.Save(writer,false);
-            writer.Close();
-           writer.Dispose();
-        }
-        public IEnumerable<YamlDocument> GetYamlDocuments()
-        {
-            for (int i = 0; i < count; i++)
-            {
-                yield return new YamlDocument(ser.ConvertToYaml(x));
-            }
-        }
-        [Benchmark]
-        public void ReadBench()
-        {
-            List<TestClass> testCases = new (count);
-            using var reader = new StreamReader($"C:\\Godot\\some-file.yaml{count}");
-            var g = new GeneratedSerializerTestClass();
-            YamlStream stream = new();
-            stream.Load( reader, count );
-
-            testCases.AddRange(g.DeserializeMany(reader));
-
-            
-        }
+  
 
     }
 

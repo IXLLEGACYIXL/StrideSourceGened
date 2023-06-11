@@ -7,9 +7,8 @@ namespace StrideSourceGened
     [DataContract]
     public class TestClass : TInherit2
     {
-        [DataMember]
+        [IgnoreDataMember]
         public int TEst = 10;
-        
         public int Number { internal get; set; } = 10;
         public string Test { get; internal init; } = "hello mister";
         public TestClass FancyClass { get; set; }

@@ -18,7 +18,7 @@ namespace StrideSourceGened
     }
 
     [DataContract]
-    public partial class TInherit4
+    public class TInherit4
     {
         public int Nubmers { get; set; }
         public int Nubmers2 { get; set; }
