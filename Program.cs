@@ -4,8 +4,11 @@ using StrideSourceGened;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Core;
 using YamlDotNet.RepresentationModel;
-
 using BenchmarkDotNet.Running;
-using StrideSourceGened.Benchis;
+using VYaml.Serialization;
+using VYaml.Parser;
+using VYaml.Emitter;
 
-BenchmarkRunner.Run<Class1>();
+
+BenchmarkRunner.Run<Benchmark>();
+// GeneratedYamlSerializerTestClass generatedYamlSerializerTestClass = new GeneratedYamlSerializerTestClass();

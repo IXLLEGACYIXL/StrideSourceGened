@@ -1,11 +1,12 @@
 ﻿
 using System.Runtime.Serialization;
-
+using VYaml.Annotations;
 
 namespace StrideSourceGened
 {
+    [YamlObject]
     [DataContract]
-    public class TestClass : TInherit2
+    public partial class TestClass : TInherit2
     {
         [IgnoreDataMember]
         public int TEst = 10;
