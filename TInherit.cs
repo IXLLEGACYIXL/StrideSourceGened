@@ -21,6 +21,7 @@ public partial class TInherit
             101,
             114
         };
+    public TInherit Bob { get; set; }
     public int FancyNumber { get; set; } = 132954717;
     public string FancyString { get; set; } = "asofhbneoiwp";
     public string FancyString2 { get; set; } = "asdofnwe";
