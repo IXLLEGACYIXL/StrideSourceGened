@@ -1,11 +1,26 @@
 ﻿
 using System.Runtime.Serialization;
+using VYaml.Annotations;
 
 namespace StrideSourceGened;
-
+[YamlObject]
 [DataContract]
-public class TInherit
+public partial class TInherit
 {
+    static readonly byte[] UTF8FancyNumber = new byte[]
+        {
+            70,
+            97,
+            110,
+            99,
+            121,
+            78,
+            117,
+            109,
+            98,
+            101,
+            114
+        };
     public int FancyNumber { get; set; } = 132954717;
     public string FancyString { get; set; } = "asofhbneoiwp";
     public string FancyString2 { get; set; } = "asdofnwe";
