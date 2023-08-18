@@ -1,20 +1,27 @@
 ﻿using BenchmarkDotNet.Running;
+using CommandLine.Text;
 using Microsoft.Diagnostics.Tracing.Stacks.Formats;
 using StrideSourceGened;
 using System.Buffers;
 using System.Diagnostics;
 using System.Text;
+using VYaml;
+using VYaml.Emitter;
 using VYaml.Serialization;
 using YamlDotNet.Core.Tokens;
 
+NexYamlSerializerRegistry.Default.RegisterFormatter(new GeneratedYamlSerializerTInherit2());
+NexYamlSerializerRegistry.Default.RegisterFormatter(new GeneratedYamlSerializerTInherit());
 
-new GeneratedYamlSerializerTInherit();
-var x = new TInherit()
-{
-    Bob = new()
-};
+var tinherit = new TInherit2();
+using FileStream writer = File.OpenWrite("C:\\Godot\\tmp.yaml");
+var yamlString = YamlSerializer.SerializeToString(tinherit);
 
-var x2 = YamlSerializer.SerializeToString(x);
-ReadOnlyMemory<byte> myReadOnlyMemory = Encoding.UTF8.GetBytes(x2);
-var result = YamlSerializer.Deserialize<TInherit>(myReadOnlyMemory);
-Console.WriteLine(result);
+writer.Write(Encoding.UTF8.GetBytes(yamlString));
+writer.Dispose();
+var mem = File.ReadAllBytes("C:\\Godot\\tmp.yaml");
+
+
+var b = YamlSerializer.Deserialize<TInherit2>(mem.AsMemory());
+Console.WriteLine(b.ToString());
+

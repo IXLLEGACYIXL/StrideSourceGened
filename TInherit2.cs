@@ -1,5 +1,6 @@
 ﻿
 using System.Runtime.Serialization;
+using VYaml.Annotations;
 
 namespace StrideSourceGened
 {
@@ -10,11 +11,13 @@ namespace StrideSourceGened
     /// one of the classes is attached to the generator and causes duplication generation of a class.
     /// clearing the namespace helps, but better to create a new namespace syntax
     /// </summary>
+    [YamlObject]
     [DataContract]
-    public class TInherit3 : TInherit2
+    public partial class TInherit3
     {
-        [DataMember]
+        public TInherit2 second { get; set; }= new TInherit2();
         public int FancyNumber { get; set; } = 10;
+        public int[] Test = new[] { 1, 2, 3, 4, 5 };
     }
 
     [DataContract]
