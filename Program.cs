@@ -5,8 +5,8 @@ using StrideSourceGened;
 using System.Buffers;
 using System.Diagnostics;
 using System.Text;
-using VYaml;
 using VYaml.Emitter;
+using VYaml.Parser;
 using VYaml.Serialization;
 using YamlDotNet.Core.Tokens;
 
@@ -25,3 +25,6 @@ var mem = File.ReadAllBytes("C:\\Godot\\tmp.yaml");
 var b = YamlSerializer.Deserialize<TInherit2>(mem.AsMemory());
 Console.WriteLine(b.ToString());
 
+Utf8YamlEmitter emitter;
+YamlParser parser;
+YamlDeserializationContext context;

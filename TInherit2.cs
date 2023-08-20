@@ -11,7 +11,6 @@ namespace StrideSourceGened
     /// one of the classes is attached to the generator and causes duplication generation of a class.
     /// clearing the namespace helps, but better to create a new namespace syntax
     /// </summary>
-    [YamlObject]
     [DataContract]
     public partial class TInherit3
     {
