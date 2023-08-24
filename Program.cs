@@ -9,13 +9,13 @@ using VYaml.Emitter;
 using VYaml.Parser;
 using VYaml.Serialization;
 using YamlDotNet.Core.Tokens;
-
-NexYamlSerializerRegistry.Default.RegisterFormatter(new GeneratedYamlSerializerTInherit2());
+var x = new GeneratedYamlSerializerTInherit2();
+NexYamlSerializerRegistry.Default.RegisterFormatter(x);
 NexYamlSerializerRegistry.Default.RegisterFormatter(new GeneratedYamlSerializerTInherit());
-
+NexYamlSerializerRegistry.Default.RegisterInterface(x, typeof(ICloneable));
 var tinherit = new TInherit2();
 using FileStream writer = File.OpenWrite("C:\\Godot\\tmp.yaml");
-var yamlString = YamlSerializer.SerializeToString(tinherit);
+var yamlString = YamlSerializer.SerializeToString<ICloneable>(tinherit);
 
 writer.Write(Encoding.UTF8.GetBytes(yamlString));
 writer.Dispose();
