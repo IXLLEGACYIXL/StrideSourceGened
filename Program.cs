@@ -13,9 +13,11 @@ var x = new GeneratedYamlSerializerTInherit2();
 NexYamlSerializerRegistry.Default.RegisterFormatter(x);
 NexYamlSerializerRegistry.Default.RegisterFormatter(new GeneratedYamlSerializerTInherit());
 NexYamlSerializerRegistry.Default.RegisterInterface(x, typeof(ICloneable));
-var tinherit = new TInherit2();
+
 using FileStream writer = File.OpenWrite("C:\\Godot\\tmp.yaml");
+var tinherit = new TInherit2();
 var yamlString = YamlSerializer.SerializeToString<ICloneable>(tinherit);
+var yamlString2 = YamlSerializer.SerializeToString(tinherit);
 
 writer.Write(Encoding.UTF8.GetBytes(yamlString));
 writer.Dispose();
