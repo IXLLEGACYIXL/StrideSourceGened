@@ -1,6 +1,7 @@
 ﻿
 using System.Runtime.Serialization;
 using VYaml.Annotations;
+using VYaml.Serialization;
 
 namespace StrideSourceGened
 {
@@ -12,11 +13,10 @@ namespace StrideSourceGened
     /// clearing the namespace helps, but better to create a new namespace syntax
     /// </summary>
     [DataContract]
-    public partial class TInherit3
+    public partial class TInherit3 : TInherit
     {
-        public TInherit2 second { get; set; }= new TInherit2();
         public int FancyNumber { get; set; } = 10;
-        public int[] Test = new[] { 1, 2, 3, 4, 5 };
+        public int[] Test { get; set; } = new[] { 1, 2, 3, 4, 5 };
     }
 
     [DataContract]
