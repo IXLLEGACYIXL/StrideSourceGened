@@ -1,6 +1,5 @@
 ﻿
 using System.Runtime.Serialization;
-using VYaml.Annotations;
 using VYaml.Serialization;
 
 namespace StrideSourceGened
