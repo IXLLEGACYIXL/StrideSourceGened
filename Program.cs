@@ -18,5 +18,5 @@ inherit3.Register();
 var inh = new TInherit2();
 var x2 = YamlSerializer.SerializeToString(inh);
 File.WriteAllText("C:\\Godot\\tmp.yaml",x2);
-var x = YamlSerializer.Deserialize<TInherit2>(File.ReadAllBytes("C:\\Godot\\tmp.yaml").AsMemory());
+var x = YamlSerializer.Deserialize<ICloneable>(File.ReadAllBytes("C:\\Godot\\tmp.yaml").AsMemory());
 Console.Write(x.ToString());
