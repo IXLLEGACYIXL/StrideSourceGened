@@ -21,7 +21,9 @@ public class TInherit2 : TInherit
 {
     public int Nubmers { get; set; } = 13827945;
     public int Nubmers2 { get; set; } = 120938537 ;
-    // changing this to ICloneable makes the inherit4 fail to deserialize
+    // changing this to ICloneable makes the inherit4 fail to deserialize,
+    // as the difference between ICloneable and the Normal Deserializer is that it must walk through the 
+    // RedirectFormatter
     public TInherit3 inherit3 { get; set; } = new TInherit3();
     public TInherit3 inherit4 { get; set; } = new TInherit3();
 }
