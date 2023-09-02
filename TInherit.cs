@@ -17,7 +17,7 @@ public class TInherit : ICloneable
 
 }
 [DataContract]
-public class TInherit2 : TInherit
+public class TInherit2<T> : TInherit
 {
     public int Nubmers { get; set; } = 13827945;
     public int Nubmers2 { get; set; } = 120938537 ;
@@ -25,7 +25,7 @@ public class TInherit2 : TInherit
     // as the difference between ICloneable and the Normal Deserializer is that it must walk through the 
     // RedirectFormatter
     public ICloneable inherit3 { get; set; } = new TInherit3();
-    public ICloneable inherit4 { get; set; } = new TInherit3();
+    public T inherit4 { get; set; }
 }
 
 [DataContract]

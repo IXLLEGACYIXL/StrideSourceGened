@@ -9,14 +9,15 @@ using VYaml.Emitter;
 using VYaml.Parser;
 using VYaml.Serialization;
 GeneratedYamlSerializerTInherit inherit3 = new GeneratedYamlSerializerTInherit();
-GeneratedYamlSerializerTInherit2 inherit = new GeneratedYamlSerializerTInherit2();
+GeneratedYamlSerializerTInherit2<int> inherit = new GeneratedYamlSerializerTInherit2<int>();
 GeneratedYamlSerializerTInherit3 inherit2 = new GeneratedYamlSerializerTInherit3();
 inherit.Register();
 inherit2.Register();
 
 inherit3.Register();
-var inh = new TInherit2();
+var inh = new TInherit2<int>();
+inh.inherit4 = 123455;
 var x2 = YamlSerializer.SerializeToString(inh);
 File.WriteAllText("C:\\Godot\\tmp.yaml",x2);
-var x = YamlSerializer.Deserialize<ICloneable>(File.ReadAllBytes("C:\\Godot\\tmp.yaml").AsMemory());
+var x = YamlSerializer.Deserialize<TInherit2<int>>(File.ReadAllBytes("C:\\Godot\\tmp.yaml").AsMemory());
 Console.Write(x.ToString());
