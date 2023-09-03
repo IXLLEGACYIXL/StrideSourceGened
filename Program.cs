@@ -9,20 +9,10 @@ using System.Text;
 using VYaml.Emitter;
 using VYaml.Parser;
 using VYaml.Serialization;
-GeneratedYamlSerializerBananaTemplate inherit3 = new ();
-GeneratedYamlSerializerDescription inherit = new ();
-GeneratedYamlSerializerDescriptionData inherit2 = new();
-GeneratedYamlSerializerFancyThing fancy = new();
-GeneratedYamlSerializerSecondFancyThing fancy2 = new();
-fancy2.Register();
-fancy.Register();
-inherit.Register();
-inherit2.Register();
-
-inherit3.Register();
-IItemTemplate inh = new BananaTemplate();
-var x2 = YamlSerializer.SerializeToString(inh);
-File.WriteAllText("C:\\Godot\\tmp.yaml",x2);
-
-
+new GeneratedYamlSerializerTInherit2<int>().Register();
+new GeneratedYamlSerializerTInherit3().Register();
+new GeneratedYamlSerializerTInherit().Register();
+var x = File.ReadAllBytes("C:\\Godot\\tmp.yaml").AsMemory < byte>();
+var t = YamlSerializer.Deserialize<ICloneable>(x);
+Console.WriteLine(t);
 

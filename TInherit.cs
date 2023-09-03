@@ -1,5 +1,5 @@
 ﻿
-using System.Runtime.Serialization;
+using Stride.Core;
 using VYaml.Serialization;
 
 namespace StrideSourceGened;
@@ -8,6 +8,7 @@ namespace StrideSourceGened;
 [DataContract]
 public class TInherit : ICloneable
 {
+    [DataMemberIgnore]
     public int Nun { get; set; } = 10;
 
     public object Clone()
