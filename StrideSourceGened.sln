@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrideSourceGened", "Stride
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VYaml.Core", "..\..\..\..\..\Godot\NexVYaml\VYaml.Core\VYaml.Core.csproj", "{36BAF1EB-3A1C-4397-B85B-88AEA647A185}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexYamlTest", "..\NexYamlTest\NexYamlTest.csproj", "{58E657B7-2B76-416D-A42F-9E348B7C8748}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{36BAF1EB-3A1C-4397-B85B-88AEA647A185}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36BAF1EB-3A1C-4397-B85B-88AEA647A185}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36BAF1EB-3A1C-4397-B85B-88AEA647A185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58E657B7-2B76-416D-A42F-9E348B7C8748}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E657B7-2B76-416D-A42F-9E348B7C8748}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E657B7-2B76-416D-A42F-9E348B7C8748}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E657B7-2B76-416D-A42F-9E348B7C8748}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,6 +8,12 @@ public class DescriptionData
     public Description Inventory { get; set; }
 }
 [DataContract]
+internal class NullSerialization
+{
+    public List<int> Guid { get; set; } = null;
+}
+
+[DataContract]
 public sealed class BananaTemplate : IItemTemplate
 {
     public string ItemName { get; set; } = "Banana";
@@ -19,7 +25,7 @@ public sealed class BananaTemplate : IItemTemplate
         new FancyThing(),
         new SecondFancyThing(),
     };
-        private static DescriptionData CreateDescriptions()
+    private static DescriptionData CreateDescriptions()
     {
 
         return new()
@@ -52,7 +58,8 @@ public class Description
 
 }
 
-public abstract class Component {
+public abstract class Component
+{
     public abstract void Do();
 }
 [DataContract]

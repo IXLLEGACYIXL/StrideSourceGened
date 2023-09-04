@@ -12,9 +12,8 @@ using VYaml.Serialization;
 new GeneratedYamlSerializerTInherit2<int>().Register();
 new GeneratedYamlSerializerTInherit3().Register();
 new GeneratedYamlSerializerTInherit().Register();
-var b = new TInherit2<string>();
-b.ints.Add("hi -");
+new GeneratedYamlSerializerNullSerialization().Register();
+var b = new NullSerialization();
 var s = YamlSerializer.SerializeToString(b);
 File.WriteAllText("C:\\Godot\\tmp.yaml", s);
-
-
+var w = "!{typeof(NullSerialization).FullName}\nGuid: !!null\n";
