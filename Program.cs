@@ -12,7 +12,9 @@ using VYaml.Serialization;
 new GeneratedYamlSerializerTInherit2<int>().Register();
 new GeneratedYamlSerializerTInherit3().Register();
 new GeneratedYamlSerializerTInherit().Register();
-var x = File.ReadAllBytes("C:\\Godot\\tmp.yaml").AsMemory < byte>();
-var t = YamlSerializer.Deserialize<ICloneable>(x);
-Console.WriteLine(t);
+var b = new TInherit2<string>();
+b.ints.Add("hi -");
+var s = YamlSerializer.SerializeToString(b);
+File.WriteAllText("C:\\Godot\\tmp.yaml", s);
+
 

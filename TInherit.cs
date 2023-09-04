@@ -27,6 +27,7 @@ public class TInherit2<T> : TInherit
     // RedirectFormatter
     public ICloneable inherit3 { get; set; } = new TInherit3();
     public T inherit4 { get; set; }
+    public List<T> ints { get; set; } = new();
 }
 
 [DataContract]
