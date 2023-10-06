@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-
+	  <PackageReference Include="Stride.Engine" Version="4.1.0.1948" />
 
 	  <ProjectReference Include="..\StrideSourceGenerator\StrideSourceGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 
