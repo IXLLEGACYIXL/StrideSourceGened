@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrideSourceGenerator", "..\StrideSourceGenerator\StrideSourceGenerator.csproj", "{F73B6369-D3E9-435C-8902-4594AF0CE933}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrideSourceGened", "StrideSourceGened.csproj", "{F7ADC375-B905-4463-BBA7-2A9C78C9B320}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NexYamlSerializer", "..\..\..\Documents\Stride Projects\NexYamlSerializer\NexYamlSerializer\NexYamlSerializer.csproj", "{179A1E85-C1D9-4B6B-9ECF-2A035B5ED6F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NexYamlSourceGenerator", "..\..\..\Documents\Stride Projects\NexYamlSerializer\NexYamlSourceGenerator\NexYamlSourceGenerator.csproj", "{E0973E7D-3130-4D27-B9E4-7FBEF09E2126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F73B6369-D3E9-435C-8902-4594AF0CE933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F73B6369-D3E9-435C-8902-4594AF0CE933}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F73B6369-D3E9-435C-8902-4594AF0CE933}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F73B6369-D3E9-435C-8902-4594AF0CE933}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7ADC375-B905-4463-BBA7-2A9C78C9B320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7ADC375-B905-4463-BBA7-2A9C78C9B320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7ADC375-B905-4463-BBA7-2A9C78C9B320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7ADC375-B905-4463-BBA7-2A9C78C9B320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{179A1E85-C1D9-4B6B-9ECF-2A035B5ED6F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{179A1E85-C1D9-4B6B-9ECF-2A035B5ED6F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{179A1E85-C1D9-4B6B-9ECF-2A035B5ED6F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{179A1E85-C1D9-4B6B-9ECF-2A035B5ED6F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0973E7D-3130-4D27-B9E4-7FBEF09E2126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0973E7D-3130-4D27-B9E4-7FBEF09E2126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0973E7D-3130-4D27-B9E4-7FBEF09E2126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0973E7D-3130-4D27-B9E4-7FBEF09E2126}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

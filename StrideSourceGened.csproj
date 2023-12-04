@@ -2,25 +2,17 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <LangVersion>11</LangVersion>
 	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-
+		
+	
   <ItemGroup>
-	  <ProjectReference Include="..\StrideSourceGenerator\StrideSourceGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-
-	  <ProjectReference Include="..\..\..\..\..\Godot\NexVYaml\VYaml.Core\VYaml.Core.csproj" />
-
-   <PackageReference Include="BenchmarkDotNet" Version="0.13.5" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.4.0" />
-    <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="17.6.2" />
-
-
-
-
-</ItemGroup>
+    <ProjectReference Include="..\..\..\Documents\Stride Projects\NexYamlSerializer\NexYamlSerializer\NexYamlSerializer.csproj" />
+    <ProjectReference Include="..\..\..\Documents\Stride Projects\NexYamlSerializer\NexYamlSourceGenerator\NexYamlSourceGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+  </ItemGroup>
 
 </Project>
