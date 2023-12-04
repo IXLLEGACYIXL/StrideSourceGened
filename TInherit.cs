@@ -1,13 +1,10 @@
-﻿
-using Stride.Core;
-using VYaml.Serialization;
-
-namespace Stride.Core;
+﻿namespace Stride.Core;
 
 
-[DataContract]
-public class TInherit : ICloneable
+[System.Runtime.Serialization.DataContract]
+public class TInherit
 {
+    [System.Runtime.Serialization.DataMember]
     public int Nun { get; set; } = 10;
 
     public object Clone()
