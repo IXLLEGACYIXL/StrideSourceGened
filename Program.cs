@@ -7,8 +7,13 @@ using System.Reflection;
 using VYaml;
 using VYaml.Serialization;
 
-NexYamlSerializerRegistry.Instance.RegisterFormatter(new NexSourceGenerated_Stride_CoreTInherit());
-var t = new TInherit();
-var x = YamlSerializer.SerializeToString(new TInherit());
-YamlSerializer.Deserialize<TInherit>(x);
+
+NexSourceGenerated_Stride_CoreTInherit<int>.Register();
+NexSourceGenerated_Stride_CoreTest.Register();
+var t = new TInherit<Test>();
+t.Test = new Test();    
+t.Value = new Test();
+var x = YamlSerializer.SerializeToString<Tomp<Test>>(t);
+var x2 = YamlSerializer.Deserialize<Tomp<Test>>(x);
+Console.WriteLine(YamlSerializer.SerializeToString(x2));
 Console.WriteLine(x);
