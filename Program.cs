@@ -14,6 +14,6 @@ var t = new TInherit<Test>();
 t.Test = new Test();    
 t.Value = new Test();
 var x = YamlSerializer.SerializeToString<Tomp<Test>>(t);
-var x2 = YamlSerializer.Deserialize<Tomp<Test>>(x);
-Console.WriteLine(YamlSerializer.SerializeToString(x2));
+//var x2 = YamlSerializer.Deserialize<Tomp<Test>>(x);
+//Console.WriteLine(YamlSerializer.SerializeToString(x2));
 Console.WriteLine(x);
